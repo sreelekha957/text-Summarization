@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Text Summarizer",
+  "version": "1.0",
+  "description": "Summarize selected text and read it aloud.",
+  "permissions": ["contextMenus", "storage", "scripting", "activeTab"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+      }
+  ]
+}
